@@ -1,76 +1,5 @@
 (ns squares.core)
 
-(def test-cases [
-            [false
-             [0 1 1 0]
-             [0 1 1 0]
-             [1 1 1 0]
-             [0 0 0 1]]
-
-            [false
-             [0 1 1 0]
-             [0 1 1 0]
-             [0 1 1 0]
-             [0 0 0 1]]
-
-            [false
-             [0 1 1 1]
-             [0 1 1 1]
-             [0 1 1 1]
-             [0 1 1 1]]
-
-            [false
-             [1 0 0 1]
-             [1 0 0 1]
-             [1 0 0 1]
-             [1 1 1 0]]
-
-            [true
-             [0 1 1 0]
-             [0 1 1 0]
-             [0 0 0 0]
-             [0 0 0 0]]
-
-            [false
-             [0 1 1 1]
-             [0 1 1 1]
-             [0 1 1 1]
-             [1 0 0 0]]
-
-            [true
-             [0 1 1 1]
-             [0 1 1 1]
-             [0 1 1 1]
-             [0 0 0 0]]
-
-            [true
-             [1 1 1 1]
-             [1 1 1 1]
-             [1 1 1 1]
-             [1 1 1 1]]
-
-            [false
-             [1 1 1 1 1]
-             [1 0 0 0 1]
-             [1 0 0 0 1]
-             [1 0 0 0 1]
-             [1 1 1 1 1]]
-
-            [false
-             [1 1 1 1 1]
-             [1 0 0 0 1]
-             [1 0 1 0 1]
-             [1 0 0 0 1]
-             [1 1 1 1 1]]
-
-            [false
-             [1 1 1 1 1]
-             [1 0 1 0 1]
-             [1 1 0 1 1]
-             [1 0 1 0 1]
-             [1 1 1 1 1]]
-])
-
 (defn analyse [sums]
   "Takes summed matrix lines and partitions to find running sequences of squares"
   (dissoc (apply merge-with
@@ -80,11 +9,8 @@
        ) 0)
 )
 
-
 (defn parse-line [s]
   (map #(if (= % \#) 1 0) s))
-
-(map parse-line ["##...##" "..####"])
 
 (defn transpose [s] (apply map vector s))
 
@@ -116,9 +42,6 @@
   (println (str "Case #" n ": " (if (square? parsed-case) "YES" "NO")))
     ))
 
-; tests
-(map #(if (= (first %) (square? (rest %))) true (throw (Throwable. "Test failed"))) test-cases)
-
 (defn -main []
   (let [n-cases (Integer/parseInt (read-line))]
     (dotimes [n n-cases]
@@ -139,5 +62,3 @@
 
 
 
-
-
