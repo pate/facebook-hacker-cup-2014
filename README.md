@@ -5,16 +5,16 @@ This is my first coding competition attempted in Clojure. I finished the first t
 ## How to Run
 You need Leiningen to run these Clojure projects. Both projects accept piped input to `stdin` and output to `stdout`. To run:
 
-> cd squares
-> lein run
+	cd squares
+	lein run
 
 To pass in data on Windows;
  
-> type .\example-in.txt | lein run
+	type .\example-in.txt | lein run
 
 And to output to a file:
 
-> type .\example-in.txt | lein run > example-out.txt
+	type .\example-in.txt | lein run > example-out.txt
 
 ## Solutions
 ### Square Detector
