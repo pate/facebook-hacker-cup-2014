@@ -16,7 +16,7 @@ And to output to a file:
 
 	type .\example-in.txt | lein run > example-out.txt
 
-## Solutions
+## Qualification Round Solutions
 ### Square Detector
 
 My square detector works by parsing the input grid of periods and hashes as a matrix of 1's and 0's, e.g. `[(0 0 1 1) (0 0 1 1) (0 0 0 0)]`. I then survey the landscape by summing the values of every row and every column into two "survey" vectors.
@@ -28,3 +28,8 @@ Any outlying hashes or gaps in the center of the square will result in another s
 ### Basketball Game
 
 Straight-forward recursive solution that counts down the minutes and swaps out players every minute until the time runs out. Most of the work is in parsing and juggling data.
+
+## Round 1 Solutions
+### Labelmaker
+
+You need to use [Bijective numeration](http://en.wikipedia.org/wiki/Bijective_numeration) to count up from 1 without a zero digit using the symbols provided as digits. Given **N** symbols, we basically need to convert the desired number for each case to a number of base N and map the digits to symbols. My recursive solution is concise and fast.
